@@ -4,84 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Website</title>
-    <!-- Link For TailwindCSS -->
+    <title>Quiz App</title>
     <link rel="stylesheet" href="./output.css">
-    <!-- Font Awesome Links For Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<style>
-    .main {
-        background: url('./img/photo-1472289065668-ce650ac443d2.avif');
-        background-position: center;
-        background-size: cover;
-        height: 100vh;
-        background-repeat: no-repeat;
-    }
-</style>
 
-<body class="text-white">
-    <div class="main duration-300">
-        <header class="px-[5rem] py-[1rem] backdrop-blur-xl shadow-2xl flex items-center justify-between">
-            <a href="#" class="text-3xl font-bold">
-                Logo.
-            </a>
+<body class="flex items-center relative overflow-hidden bg-white justify-center h-screen">
+    <div class="bg-white-100 shadow-lg text-center p-5 rounded-lg">
+        <p class="text-black font-bold text-2xl ">Start The Quiz</p>
+        <button class="px-[69px] shadow-lg mt-10 py-4 font-semibold rounded-lg bg-purple text-white-100 startBtn">START</button>
+    </div>
 
-            <nav class="flex items-center font-medium gap-3">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </nav>
-        </header>
-
-        <main class="flex items-center mt-[-5rem] justify-center h-full">
-            <div class="w-[500px] text-center">
-                <p class="text-4xl font-bold">Quiz Website</p>
-                <p class="py-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt omnis beatae totam
-                    accusamus pariatur
-                    accusantium animi quasi, sunt voluptatum assumenda natus excepturi quidem sint nam nesciunt atque
-                    repellendus aut? Quasi!</p>
-                <button class="bg-[#007F73] hover:scale-110 duration-200 rounded-md px-[20px] py-[5px] startBtn">Start
-                    Now!</button>
+    <section class="flex flex-col gap-5 quizSection items-center absolute top-[100%] bg-white justify-center h-screen">
+        <div class="absolute top-3">
+            <div class="bg-white-100 py-4 px-14 rounded-md shadow-md font-bold">
+                <p class="flex items-center gap-2"><i class="fa-solid fa-clock"></i>5:55</p>
             </div>
-
-        </main>
-    </div>
-
-    <div class="absolute top-[30%] modal duration-300 hidden w-[500px] left-[35%] text-black bg-white p-4 rounded-xl">
-        <p class="font-bold text-3xl">Are You Sure?</p>
-        <hr class="my-[1rem]">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nulla, odio modi fuga nihil obcaecati!
-            Excepturi iste quia, maxime fugit voluptatem repellat? Aliquid repellendus nulla ex perspiciatis autem
-            necessitatibus alias.</p>
-        <div class="flex items-center mt-[1rem] justify-between text-white">
-            <button class="bg-[#007F73] px-[30px] rounded-lg exitBtn py-[10px] flex items-center gap-4"><i
-                    class="fa-solid fa-arrow-left"></i> Exit</button>
-            <button class="bg-[#FF204E] px-[30px] rounded-lg continueBtn py-[10px]">Continue <i
-                    class="fa-solid fa-arrow-right"></i></button>
         </div>
-    </div>
+        <div class="bg-white-100 shadow-lg w-[500px] rounded-lg p-5">
+            <p class="font-bold text-lg">1. What does HTML stand for?</p>
+            <div class="mt-5">
+                <div class="bg-grey rounded-lg p-5 flex items-center gap-6">
+                    <input type="checkbox" id="checkBox">
+                    <p class="font-medium text-base questionTitle">Hyper text markup language</p>
+                </div>
+                <div class="mt-2 bg-grey rounded-lg p-5 flex items-center gap-6">
+                    <input type="checkbox" id="checkBox">
+                    <p class="font-medium text-base text-dark questionTitle">Hyper text markup language</p>
+                </div>
+                <div class="mt-2 bg-grey rounded-lg p-5 flex items-center gap-6">
+                    <input type="checkbox" id="checkBox">
+                    <p class="font-medium text-base text-dark questionTitle">Hyper text markup language</p>
+                </div>
+            </div>
+        </div>
+        <button
+            class="flex items-center justify-end text-end translate-x-[150%] rounded-md font-semibold bg-purple px-5 py-4 text-white">NEXT
+            QUIZ</button>
+    </section>
 
-    <script>
-        const modal = document.querySelector('.modal');
-        const startBtn = document.querySelector('.startBtn');
-        const elMain = document.querySelector('.main');
-        const exitBtn = document.querySelector('.exitBtn');
-        const continueBtn = document.querySelector('.continueBtn');
-
-        console.log(exitBtn, continueBtn);
-
-        startBtn.addEventListener('click', () => {
-            modal.classList.remove('hidden');
-            elMain.classList.add('blur-md');
-        });
-
-        exitBtn.addEventListener('click', () => {
-            modal.classList.add('hidden');
-            elMain.classList.remove('blur-md');
-        })
-    </script>
-
+    <script src="./js/question.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
