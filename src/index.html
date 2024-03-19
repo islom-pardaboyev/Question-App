@@ -2,50 +2,90 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
-    <link rel="stylesheet" href="./output.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="./output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
-<body class="flex items-center relative overflow-hidden bg-white justify-center h-screen">
-    <div class="bg-white-100 shadow-lg text-center p-5 rounded-lg">
-        <p class="text-black font-bold text-2xl ">Start The Quiz</p>
-        <button class="px-[69px] shadow-lg mt-10 py-4 font-semibold rounded-lg bg-purple text-white-100 startBtn">START</button>
-    </div>
-
-    <section class="flex flex-col gap-5 quizSection items-center absolute top-[100%] bg-white justify-center h-screen">
-        <div class="absolute top-3">
-            <div class="bg-white-100 py-4 px-14 rounded-md shadow-md font-bold">
-                <p class="flex items-center gap-2"><i class="fa-solid fa-clock"></i>5:55</p>
-            </div>
+<body class="relative bg-primary-100 justify-center h-screen">
+  <main>
+    <section class="hidden">
+      <div class="container min-h-screen max-w-[500px] py-[30px] mx-auto flex flex-col">
+        <div class="bg-white shadow-card text-center p-5 max-w-[224px] w-full m-auto rounded-2xl">
+          <p class="text-primary-300 font-bold text-[22px]">Start The Quiz</p>
+          <button id="start-btn"
+            class="text-sm uppercase px-5 w-full shadow-purpleBtn mt-10 py-4 font-semibold rounded-lg bg-primary-200 text-white">
+            Start
+          </button>
         </div>
-        <div class="bg-white-100 shadow-lg w-[500px] rounded-lg p-5">
-            <p class="font-bold text-lg">1. What does HTML stand for?</p>
-            <div class="mt-5">
-                <div class="bg-grey rounded-lg p-5 flex items-center gap-6">
-                    <input type="checkbox" id="checkBox">
-                    <p class="font-medium text-base questionTitle">Hyper text markup language</p>
-                </div>
-                <div class="mt-2 bg-grey rounded-lg p-5 flex items-center gap-6">
-                    <input type="checkbox" id="checkBox">
-                    <p class="font-medium text-base text-dark questionTitle">Hyper text markup language</p>
-                </div>
-                <div class="mt-2 bg-grey rounded-lg p-5 flex items-center gap-6">
-                    <input type="checkbox" id="checkBox">
-                    <p class="font-medium text-base text-dark questionTitle">Hyper text markup language</p>
-                </div>
-            </div>
+      </div>
+    </section>
+    <section class="hidden">
+      <div class="container max-w-[500px] min-h-screen py-[30px] mx-auto flex flex-col">
+        <div class="bg-white py-4 px-14 rounded-lg shadow-card mx-auto mb-[22px]">
+          <p class="flex items-center gap-[6px] font-bold">
+            <i class="fa-solid fa-clock"></i>5:55
+          </p>
         </div>
-        <button
-            class="flex items-center justify-end text-end translate-x-[150%] rounded-md font-semibold bg-purple px-5 py-4 text-white">NEXT
-            QUIZ</button>
+        <div class="flex flex-col">
+          <div class="bg-white shadow-lg w-[500px] rounded-lg p-5">
+            <h2 class="font-bold text-lg">1. What does HTML stand for?</h2>
+            <div class="mt-5 flex flex-col gap-2">
+              <div class="bg-gray rounded-lg p-4 cursor-pointer flex items-center gap-[14px]">
+                <span class="bg-white rounded-full w-[18px] h-[18px] grid place-items-center">
+                  <span class="bg-primary-200 rounded-full w-[13px] h-[13px] hidden"></span>
+                </span>
+                <p class="font-medium text-base opacity-50">
+                  Hyper text markup language
+                </p>
+              </div>
+              <div class="bg-gray rounded-lg p-4 cursor-pointer flex items-center gap-[14px]">
+                <span class="bg-white rounded-full w-[18px] h-[18px] grid place-items-center">
+                  <span class="bg-primary-200 rounded-full w-[13px] h-[13px] hidden"></span>
+                </span>
+                <p class="font-medium text-base opacity-50">
+                  Hyper text markup language
+                </p>
+              </div>
+              <div class="bg-gray rounded-lg p-4 cursor-pointer flex items-center gap-[14px]">
+                <span class="bg-white rounded-full w-[18px] h-[18px] grid place-items-center">
+                  <span class="bg-primary-200 rounded-full w-[13px] h-[13px] hidden"></span>
+                </span>
+                <p class="font-medium text-base opacity-50">
+                  Hyper text markup language
+                </p>
+              </div>
+            </div>
+          </div>
+          <button id="start-btn"
+            class="px-5 ml-auto text-sm uppercase shadow-purpleBtn mt-5 py-4 font-semibold rounded-lg bg-primary-200 text-white">
+            Next quiz
+          </button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="flex items-center justify-center shadow-card w-full min-h-screen">
+        <div class="bg-white p-5 px-auto rounded-2xl flex flex-col items-center">
+          <div>
+            <p class="text-center py-[60px] px-[35px] font-bold text-2xl bg-primary-200 rounded-full text-white">
+              12/34
+            </p>
+          </div>
+          <div class="flex gap-10 text-white mt-10">
+            <button class="uppercase py-4 px-5 rounded-lg bg-green-500 font-bold">Show result</button>
+            <button class="uppercase py-4 px-5 rounded-lg bg-sky font-bold">Try again</button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <script src="./js/question.js"></script>
-    <script src="./js/index.js"></script>
-</body>
 
-</html>
+  </main>
+</body>
+<script src="./js/main.js"></script>
